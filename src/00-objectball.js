@@ -36,4 +36,31 @@ function numPointsScored(playerName) {
     }
 }
 
-//console.log(numPointsScored('Brendan Haywood'));
+function shoeSize(playerName) {
+    let stats = gameObject();
+    for (let player in stats.home.players) {
+        if (player === playerName) {
+            return stats.home.players[player].shoe;
+        }
+    }
+    for (let player in stats.away.players) {
+                if (player === playerName) {
+                    return stats.away.players[player].shoe;
+        }
+    }
+}
+
+function teamColors(nameOfTeam) {
+    let stats = gameObject();
+    if (stats.home.teamName === nameOfTeam) {
+        return stats.home.colors;
+    }
+    else if (stats.away.teamName === nameOfTeam){
+        return stats.away.colors;
+    }
+    
+    
+    
+}
+
+console.log(teamColors('Charlotte Hornets'));
