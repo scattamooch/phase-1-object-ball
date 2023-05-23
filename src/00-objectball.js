@@ -21,3 +21,19 @@ function gameObject() {
     }
     }
 }
+
+function numPointsScored(playerName) {
+    let stats = gameObject();
+    for (let player in stats.home.players) {
+        if (player === playerName) {
+            return stats.home.players[player].Points;
+        }
+    }
+    for (let player in stats.away.players) {
+                if (player === playerName) {
+                    return stats.away.players[player].Points
+        }
+    }
+}
+
+//console.log(numPointsScored('Brendan Haywood'));
